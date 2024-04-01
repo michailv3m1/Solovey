@@ -1,0 +1,12 @@
+.promo {
+    min-height: 100vh;
+    background: url('../img/main_bg.jpg') center (center/cover) no-repeat;
+    padding: 40px 40px 0 40px;
+    &__descr {
+        margin: 100px 0 0 465px;
+        width: 445px;
+        font-size: 18px;
+        font-weight: 400;
+        color: #fff;
+    }
+}
