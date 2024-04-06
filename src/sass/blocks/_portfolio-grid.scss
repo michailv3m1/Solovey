@@ -1,21 +1,13 @@
 .portfolio {
-    background-color: #000;
-    padding: 0 30px;
-}
-.portfolio-grid {
-    min-height: 1850px;
-    position: relative;
-    &__item {
-        margin: 10px 10px;
-        width: 445px;
-    }
-    &__link {
-      display: block;  
+    column-count: 4;
+    column-gap: 20px;
+    &__grid {
+        width: 100%;
+        break-inside: avoid;
+        margin-bottom: 20px;
     }
     &__img {
-        border-radius: 10.5px;
+        width: 100%;
+        display: block;
     }
-}
-.portfolio-grid__item.is-visible {
-    display: block;
 }
