@@ -1,15 +1,15 @@
-const showMore = document.querySelector('.load-more__btn');
-const linkLength = document.querySelectorAll('.portfolio-grid__link').length;
-let items = 22;
+const showMore = document.querySelector('.btn.btn--load-more');
+const productsLength = document.querySelectorAll('.portfolio__grid').length;
+let items = 13;
 
 showMore.addEventListener('click', () => {
-    items+=12;
-    const array = Array.from(document.querySelector('.portfolio-grid').children);
-    const visItems = array.slice(0, items);
+	items += 13;
+	const array = Array.from(document.querySelector('.portfolio').children);
+	const visItems = array.slice(0, items);
 
-    visItems.forEach(el => el.classList.add('is-visible'));
+	visItems.forEach(el => el.classList.add('is-visible'));
 
-    if (visItems.length === linkLength) {
-        showMore.style.display = 'none';
-    }
+	if (visItems.length === productsLength) {
+		showMore.style.display = 'none';
+	}
 });

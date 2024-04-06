@@ -1,13 +1,49 @@
 .portfolio {
+    position: relative;
     column-count: 4;
     column-gap: 20px;
+    padding: 0 40px;
     &__grid {
+        position: relative;
         width: 100%;
         break-inside: avoid;
         margin-bottom: 20px;
+        overflow: hidden;
+        border-radius: 14.5px;
+        transition: transform 0.225s ease;
+        &:nth-child(n+12) {
+            display: none;
+        }       
+        &:hover {
+            transform: scale(1.02);
+            .portfolio__img {
+                opacity: 0.3;
+            }
+            .portfolio__title {
+                bottom: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+
+            }
+        }
     }
     &__img {
         width: 100%;
         display: block;
+        border-radius: 14.5px;
     }
+    &__title {
+        position: absolute;
+        bottom: -30px;
+        margin: 0 auto;
+        width: 445px;
+        color: #fff;
+        font-weight: 700;
+        font-size: 26px;
+        text-align: center;
+    }
+}
+
+.is-visible {
+    display: block;
 }

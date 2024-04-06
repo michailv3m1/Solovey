@@ -3,14 +3,8 @@
     justify-content: space-between;
     &__title {
         width: 523px;
-        font-size: 70px;
-        font-weight: 500;
         text-align-last: left;
-        color: #fff;
         margin-bottom: 0;
-        &--gray {
-            color: $gray-text;
-        }
     }
 
 }

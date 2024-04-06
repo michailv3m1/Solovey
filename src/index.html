@@ -50,7 +50,7 @@
 <body>
     <section class="promo">
         <header class="header">
-            <h1 class="header__title"><span class="header__title--gray">Соловей -</span> креативное агенство полного цикла</h1>
+            <h1 class="title header__title"><span class="title--gray">Соловей -</span> креативное агенство полного цикла</h1>
             <nav class="menu">
                 <ul class="menu__list">
                     <li class="menu__link"><a href="#">Работы</a></li>
@@ -67,116 +67,388 @@
             креативные идеи и стратегии для решения 
             бизнес-задач. 
         </div>
-    </section>
-    <div class="container">
-        <label class="dropdown__lable" for="filming-tg">
-            <input id="filming-tg" class="dropdown__checkbox" type="checkbox" onchange="filterItems()">
-            <span class="dropdown__inner">Съемки</span>
-        </label>
-        <div class="portfolio">
-            <div class="portfolio__grid filming">
-                <img src="img/preview/Araneobit.jpg" class="portfolio__img">
+        <div class="scroll-menu">
+            <div class="filter">
+                <div class="filter__wrapper">
+                    <button class="filter__btn fil1">
+                        <div class="filter__title">Виды работ</div>
+                        <img src="icons/arrow.svg" alt="arrow" class="filter__img">
+                    </button>
+                    <button class="filter__btn fil2">
+                        <div class="filter__title">Ниши бизнеса</div>
+                        <img src="icons/arrow.svg" alt="arrow" class="filter__img">
+                    </button>
+                    <button class="filter__reset" onchange="resetFilter()">Сбросить фильтр</button>
+                </div>
+                <div class="filter__sort">
+                    <button class="filter__sort-btn filter__sort-btn--mr50">Хронология</button>
+                    <button class="filter__sort-btn">Рекомендуем</button>
+                </div>
             </div>
-            <div class="portfolio__grid filming">
-                <img src="img/preview/Araneobit.jpg" class="portfolio__img">
+            <div class="dropdown fil1">
+                <ul class="dropdown__list list-reset ">
+                    <li class="dropdown__item">
+                        <label class="dropdown__lable" for="3d">
+                            <input id="3d" class="dropdown__checkbox" type="checkbox" onchange="filterItems()">
+                            <span class="dropdown__inner">Персонажная анимация</span>
+                        </label>
+                    </li>
+                    <li class="dropdown__item">
+                        <label class="dropdown__lable" for="presentation">
+                            <input id="presentation" class="dropdown__checkbox" type="checkbox" onchange="filterItems()">
+                            <span class="dropdown__inner">IT</span>
+                        </label>
+                    </li>
+                    <li class="dropdown__item">
+                        <label class="dropdown__lable" for="infographics">
+                            <input id="infographics" class="dropdown__checkbox" type="checkbox" onchange="filterItems()">
+                            <span class="dropdown__inner">Блокчейн</span>
+                        </label>
+                    </li>
+                    <li class="dropdown__item">
+                        <label class="dropdown__lable" for="2d">
+                            <input id="2d" class="dropdown__checkbox" type="checkbox" onchange="filterItems()">
+                            <span class="dropdown__inner">Госсектор</span>
+                        </label>
+                    </li>
+                    <li class="dropdown__item">
+                        <label class="dropdown__lable" for="animated-video">
+                            <input id="animated-video" class="dropdown__checkbox" type="checkbox" onchange="filterItems()">
+                            <span class="dropdown__inner">Медицина</span>
+                        </label>
+                    </li>
+                    <li class="dropdown__item">
+                        <label class="dropdown__lable" for="character-ani">
+                            <input id="character-ani" class="dropdown__checkbox" type="checkbox" onchange="filterItems()">
+                            <span class="dropdown__inner">Образование</span>
+                        </label>
+                    </li>
+                    <li class="dropdown__item">
+                        <label class="dropdown__lable" for="filming">
+                            <input id="filming" class="dropdown__checkbox" type="checkbox" onchange="filterItems()">
+                            <span class="dropdown__inner">Финансы</span>
+                        </label>
+                    </li>
+                    <li class="dropdown__item">
+                        <label class="dropdown__lable" for="cleanup-tracking">
+                            <input id="cleanup-tracking" class="dropdown__checkbox" type="checkbox" onchange="filterItems()">
+                            <span class="dropdown__inner">Недвижимость</span>
+                        </label>
+                    </li>
+                    <li class="dropdown__item">
+                        <label class="dropdown__lable" for="cleanup-tracking">
+                            <input id="cleanup-tracking" class="dropdown__checkbox" type="checkbox" onchange="filterItems()">
+                            <span class="dropdown__inner">Брендинг</span>
+                        </label>
+                    </li>
+                    <li class="dropdown__item">
+                        <label class="dropdown__lable" for="cleanup-tracking">
+                            <input id="cleanup-tracking" class="dropdown__checkbox" type="checkbox" onchange="filterItems()">
+                            <span class="dropdown__inner">Ритейл</span>
+                        </label>
+                    </li>
+                    <li class="dropdown__item">
+                        <label class="dropdown__lable" for="cleanup-tracking">
+                            <input id="cleanup-tracking" class="dropdown__checkbox" type="checkbox" onchange="filterItems()">
+                            <span class="dropdown__inner">Услуги</span>
+                        </label>
+                    </li>
+                    <li class="dropdown__item">
+                        <label class="dropdown__lable" for="cleanup-tracking">
+                            <input id="cleanup-tracking" class="dropdown__checkbox" type="checkbox" onchange="filterItems()">
+                            <span class="dropdown__inner">Стартап</span>
+                        </label>
+                    </li>
+                    <li class="dropdown__item">
+                        <label class="dropdown__lable" for="cleanup-tracking">
+                            <input id="cleanup-tracking" class="dropdown__checkbox" type="checkbox" onchange="filterItems()">
+                            <span class="dropdown__inner">Образовательное</span>
+                        </label>
+                    </li>
+                    <li class="dropdown__item">
+                        <label class="dropdown__lable" for="cleanup-tracking">
+                            <input id="cleanup-tracking" class="dropdown__checkbox" type="checkbox" onchange="filterItems()">
+                            <span class="dropdown__inner">B2C</span>
+                        </label>
+                    </li>
+                    <li class="dropdown__item">
+                        <label class="dropdown__lable" for="cleanup-tracking">
+                            <input id="cleanup-tracking" class="dropdown__checkbox" type="checkbox" onchange="filterItems()">
+                            <span class="dropdown__inner">Производство</span>
+                        </label>
+                    </li>
+                    <li class="dropdown__item">
+                        <label class="dropdown__lable" for="cleanup-tracking">
+                            <input id="cleanup-tracking" class="dropdown__checkbox" type="checkbox" onchange="filterItems()">
+                            <span class="dropdown__inner">B2B</span>
+                        </label>
+                    </li>
+                    <li class="dropdown__item">
+                        <label class="dropdown__lable" for="cleanup-tracking">
+                            <input id="cleanup-tracking" class="dropdown__checkbox" type="checkbox" onchange="filterItems()">
+                            <span class="dropdown__inner">Спорт</span>
+                        </label>
+                    </li>
+                    <li class="dropdown__item">
+                        <label class="dropdown__lable" for="cleanup-tracking">
+                            <input id="cleanup-tracking" class="dropdown__checkbox" type="checkbox" onchange="filterItems()">
+                            <span class="dropdown__inner">Техника безопасности</span>
+                        </label>
+                    </li>
+                </ul>
             </div>
-            <div class="portfolio__grid">
-                <img src="img/preview/Mask group (7).jpg" class="portfolio__img">
-            </div>
-            <div class="portfolio__grid">
-                <img src="img/preview/Mask group (1).jpg" class="portfolio__img">
-            </div>
-            <div class="portfolio__grid">
-                <img src="img/preview/Mask group (1).jpg" class="portfolio__img">
-            </div>
-            <div class="portfolio__grid">
-                <img src="img/preview/Mask group (1).jpg" class="portfolio__img">
-            </div>
-            <div class="portfolio__grid filming">
-                <img src="img/preview/Araneobit.jpg" class="portfolio__img">
-            </div>
-            <div class="portfolio__grid filming">
-                <img src="img/preview/Araneobit.jpg" class="portfolio__img">
-            </div>
-            <div class="portfolio__grid">
-                <img src="img/preview/Mask group (7).jpg" class="portfolio__img">
-            </div>
-            <div class="portfolio__grid">
-                <img src="img/preview/Mask group (1).jpg" class="portfolio__img">
-            </div>
-            <div class="portfolio__grid">
-                <img src="img/preview/Mask group (1).jpg" class="portfolio__img">
-            </div>
-            <div class="portfolio__grid">
-                <img src="img/preview/Mask group (1).jpg" class="portfolio__img">
-            </div>
-            <div class="portfolio__grid filming">
-                <img src="img/preview/Araneobit.jpg" class="portfolio__img">
-            </div>
-            <div class="portfolio__grid filming">
-                <img src="img/preview/Araneobit.jpg" class="portfolio__img">
-            </div>
-            <div class="portfolio__grid">
-                <img src="img/preview/Mask group (7).jpg" class="portfolio__img">
-            </div>
-            <div class="portfolio__grid">
-                <img src="img/preview/Mask group (1).jpg" class="portfolio__img">
-            </div>
-            <div class="portfolio__grid">
-                <img src="img/preview/Mask group (1).jpg" class="portfolio__img">
-            </div>
-            <div class="portfolio__grid">
-                <img src="img/preview/Mask group (1).jpg" class="portfolio__img">
+            <div class="dropdown fil2">
+                <ul class="dropdown__list list-reset ">
+                    <li class="dropdown__item">
+                        <label class="dropdown__lable" for="3d">
+                            <input id="3d" class="dropdown__checkbox" type="checkbox" onchange="filterItems()">
+                            <span class="dropdown__inner">3D-ролик</span>
+                        </label>
+                    </li>
+                    <li class="dropdown__item">
+                        <label class="dropdown__lable" for="presentation">
+                            <input id="presentation" class="dropdown__checkbox" type="checkbox" onchange="filterItems()">
+                            <span class="dropdown__inner">Презентация</span>
+                        </label>
+                    </li>
+                    <li class="dropdown__item">
+                        <label class="dropdown__lable" for="infographics">
+                            <input id="infographics" class="dropdown__checkbox" type="checkbox" onchange="filterItems()">
+                            <span class="dropdown__inner">Инфографика</span>
+                        </label>
+                    </li>
+                    <li class="dropdown__item">
+                        <label class="dropdown__lable" for="2d">
+                            <input id="2d" class="dropdown__checkbox" type="checkbox" onchange="filterItems()">
+                            <span class="dropdown__inner">2D-графика</span>
+                        </label>
+                    </li>
+                    <li class="dropdown__item">
+                        <label class="dropdown__lable" for="animated-video">
+                            <input id="animated-video" class="dropdown__checkbox" type="checkbox" onchange="filterItems()">
+                            <span class="dropdown__inner">Анимационный ролик</span>
+                        </label>
+                    </li>
+                    <li class="dropdown__item">
+                        <label class="dropdown__lable" for="character-ani">
+                            <input id="character-ani" class="dropdown__checkbox" type="checkbox" onchange="filterItems()">
+                            <span class="dropdown__inner">Персонажная анимация</span>
+                        </label>
+                    </li>
+                    <li class="dropdown__item">
+                        <label class="dropdown__lable" for="filming">
+                            <input id="filming" class="dropdown__checkbox" type="checkbox" onchange="filterItems()">
+                            <span class="dropdown__inner">Съемки</span>
+                        </label>
+                    </li>
+                    <li class="dropdown__item">
+                        <label class="dropdown__lable" for="cleanup-tracking">
+                            <input id="cleanup-tracking" class="dropdown__checkbox" type="checkbox" onchange="filterItems()">
+                            <span class="dropdown__inner">Клинап/трекинг</span>
+                        </label>
+                    </li>
+                </ul>
             </div>
         </div>
-    </div>
-    
-   
+    </section>
+        <div class="portfolio">
+            <article class="portfolio__grid filming">
+                <a href="" class="portfolio__link">
+                    <img src="img/preview/Araneobit.jpg" class="portfolio__img">
+                </a>
+                <div class="portfolio__title">Длинное название проекта</div>
+            </article>
+            <article class="portfolio__grid filming">
+                <a href="" class="portfolio__link">
+                    <img src="img/preview/Mask group (1).jpg" class="portfolio__img">
+                </a>
+                <div class="portfolio__title">Длинное название проекта</div>
+            </article>
+            <article class="portfolio__grid 3d">
+                <a href="" class="portfolio__link">
+                    <img src="img/preview/Mask group (3).jpg" class="portfolio__img">
+                </a>
+                <div class="portfolio__title">Длинное название проекта</div>
+            </article>
+            <article class="portfolio__grid 3d filming">
+                <a href="" class="portfolio__link">
+                    <img src="img/preview/Mask group (4).jpg" class="portfolio__img">
+                </a>
+                <div class="portfolio__title">Длинное название проекта</div>
+            </article>
+            <article class="portfolio__grid">
+                <a href="" class="portfolio__link">
+                    <img src="img/preview/Mask group (5).jpg" class="portfolio__img">
+                </a>
+                <div class="portfolio__title">Длинное название проекта</div>
+            </article>
+            <article class="portfolio__grid">
+                <a href="" class="portfolio__link">
+                    <img src="img/preview/Mask group (6).jpg" class="portfolio__img">
+                </a>
+                <div class="portfolio__title">Длинное название проекта</div>
+            </article>
+            <article class="portfolio__grid">
+                <a href="" class="portfolio__link">
+                    <img src="img/preview/Mask group (7).jpg" class="portfolio__img">
+                </a>
+                <div class="portfolio__title">Длинное название проекта</div>
+            </article>
+            <article class="portfolio__grid">
+                <a href="" class="portfolio__link">
+                    <img src="img/preview/Mask group (9).jpg" class="portfolio__img">
+                </a>
+                <div class="portfolio__title">Длинное название проекта</div>
+            </article>
+            <article class="portfolio__grid">
+                <a href="" class="portfolio__link">
+                    <img src="img/preview/Mask group.jpg" class="portfolio__img">
+                </a>
+                <div class="portfolio__title">Длинное название проекта</div>
+            </article>
+            <article class="portfolio__grid filming">
+                <a href="" class="portfolio__link">
+                    <img src="img/preview/Nskes.jpg" class="portfolio__img">
+                </a>
+                <div class="portfolio__title">Длинное название проекта</div>
+            </article>
+            <article class="portfolio__grid 3d">
+                <a href="" class="portfolio__link">
+                    <img src="img/preview/Polaris_1.jpg" class="portfolio__img">
+                </a>
+                <div class="portfolio__title">Длинное название проекта</div>
+            </article>
+            <article class="portfolio__grid 3d">
+                <a href="" class="portfolio__link">
+                    <img src="img/preview/Polaris_2.jpg" class="portfolio__img">
+                </a>
+                <div class="portfolio__title">Длинное название проекта</div>
+            </article>
+            <article class="portfolio__grid 3d">
+                <a href="" class="portfolio__link">
+                    <img src="img/preview/Sber.jpg" class="portfolio__img">
+                </a>
+                <div class="portfolio__title">Длинное название проекта</div>
+            </article>
+
+            <article class="portfolio__grid filming">
+                <a href="" class="portfolio__link">
+                    <img src="img/preview/Araneobit.jpg" class="portfolio__img">
+                </a>
+                <div class="portfolio__title">Длинное название проекта</div>
+            </article>
+            <article class="portfolio__grid filming">
+                <a href="" class="portfolio__link">
+                    <img src="img/preview/Mask group (1).jpg" class="portfolio__img">
+                </a>
+                <div class="portfolio__title">Длинное название проекта</div>
+            </article>
+            <article class="portfolio__grid 3d">
+                <a href="" class="portfolio__link">
+                    <img src="img/preview/Mask group (3).jpg" class="portfolio__img">
+                </a>
+                <div class="portfolio__title">Длинное название проекта</div>
+            </article>
+            <article class="portfolio__grid 3d filming">
+                <a href="" class="portfolio__link">
+                    <img src="img/preview/Mask group (4).jpg" class="portfolio__img">
+                </a>
+                <div class="portfolio__title">Длинное название проекта</div>
+            </article>
+            <article class="portfolio__grid">
+                <a href="" class="portfolio__link">
+                    <img src="img/preview/Mask group (5).jpg" class="portfolio__img">
+                </a>
+                <div class="portfolio__title">Длинное название проекта</div>
+            </article>
+            <article class="portfolio__grid">
+                <a href="" class="portfolio__link">
+                    <img src="img/preview/Mask group (6).jpg" class="portfolio__img">
+                </a>
+                <div class="portfolio__title">Длинное название проекта</div>
+            </article>
+            <article class="portfolio__grid">
+                <a href="" class="portfolio__link">
+                    <img src="img/preview/Mask group (9).jpg" class="portfolio__img">
+                </a>
+                <div class="portfolio__title">Длинное название проекта</div>
+            </article>
+            <article class="portfolio__grid">
+                <a href="" class="portfolio__link">
+                    <img src="img/preview/Mask group.jpg" class="portfolio__img">
+                </a>
+                <div class="portfolio__title">Длинное название проекта</div>
+            </article>
+            <article class="portfolio__grid filming">
+                <a href="" class="portfolio__link">
+                    <img src="img/preview/Nskes.jpg" class="portfolio__img">
+                </a>
+                <div class="portfolio__title">Длинное название проекта</div>
+            </article>
+            <article class="portfolio__grid 3d">
+                <a href="" class="portfolio__link">
+                    <img src="img/preview/Polaris_1.jpg" class="portfolio__img">
+                </a>
+                <div class="portfolio__title">Длинное название проекта</div>
+            </article>
+            <article class="portfolio__grid 3d">
+                <a href="" class="portfolio__link">
+                    <img src="img/preview/Polaris_2.jpg" class="portfolio__img">
+                </a>
+                <div class="portfolio__title">Длинное название проекта</div>
+            </article>
+        </div>
     <div class="load-more">
-        <button class="load-more__btn">Загрузить еще</button>
+        <button class="btn btn--load-more">Загрузить еще</button>
     </div>
-    
-    <style>
-        .portfolio {
-            column-count: 4;
-            column-gap: 20px;
-        }
-        .portfolio__grid {
-            width: 100%;
-            break-inside: avoid;
-            margin-bottom: 20px;
-        }
-        .portfolio__img {
-            width: 100%;
-            display: block;
-        }
-    </style>
-<script>
-        function filterItems() {
-            const checkbox = document.getElementById('filming-tg');
-            const items = document.getElementsByClassName('portfolio__grid');
-
-        for (let item of items) {
-            if (checkbox.checked && !item.classList.contains('filming')) {
-                item.style.display = 'none';
-            } else {
-                item.style.display = 'block';
-            }
-        }
-    }
-
-    function resetFilter() {
-        const checkbox = document.getElementById('filming');
-        const items = document.getElementsByClassName('portfolio__grid');
-
-        checkbox.checked = false;
-
-        for (let item of items) {
-            item.style.display = 'block';
-        }
-    }
-</script>
-    
+    <section class="services">
+        <h2 class="title title--mr147">Услуги</h2>
+        <div class="services__grid">
+            <div class="services__item">
+                <a href="#" class="services__link">Комплексные РК</a>
+                <a href="#" class="services__link">Воронки продаж</a>
+                <a href="#" class="services__link">Таргетированная реклама</a>
+                <a href="#" class="services__link">Продвижение на YouTube</a>
+                <a href="#" class="services__link">Анализ рынка</a>
+                <a href="#" class="services__link">Маркетинг</a>
+                <a href="#" class="services__link">Директ</a>
+                <a href="#" class="services__link">SEO / SMM</a>
+            </div>
+            <div class="services__item">
+                <a href="#" class="services__link">2D-анимация</a>
+                <a href="#" class="services__link">3D-анимация</a>
+                <a href="#" class="services__link">Съемка</a>
+                <a href="#" class="services__link">Cleanup / Chroma key</a>
+                <a href="#" class="services__link">Рекламные ролики</a>
+                <a href="#" class="services__link">Акционные ролики</a>
+                <a href="#" class="services__link">TV реклама</a>
+                <a href="#" class="services__link">LED-экраны</a>
+                <a href="#" class="services__link">Ресайзы роликов</a>
+            </div>
+            <div class="services__item">
+                <a href="#" class="services__link">Логотип</a>
+                <a href="#" class="services__link">Презентации</a>
+                <a href="#" class="services__link">Фирменный персонаж</a>
+                <a href="#" class="services__link">Дизайн полиграфии</a>
+                <a href="#" class="services__link">Регистрация ТМ</a>
+                <a href="#" class="services__link">Аудиоролики</a>
+                <a href="#" class="services__link">Голоса дикторов</a>
+                <a href="#" class="services__link">Написание музыки</a>
+                <a href="#" class="services__link">Звуки</a>
+            </div>
+            <div class="services__item">
+                <a href="#" class="services__link">Лендинги</a>
+                <a href="#" class="services__link">Интернет-магазины</a>
+                <a href="#" class="services__link">Корпоративные сайты</a>
+                <a href="#" class="services__link">Сценарии</a>
+                <a href="#" class="services__link">Концепция бренда</a>
+                <a href="#" class="services__link">Нейминг</a>
+                <a href="#" class="services__link">Слоган</a>
+            </div>
+        </div>
+    </section>
+    <script src="js/filter.js"></script>
+    <script src="js/load-more.js"></script>
 </body>
 </html>
 

@@ -1,0 +1,11 @@
+.title {
+    color: #fff;
+    font-size: 70px;
+    font-weight: 500;
+    &--gray {
+        color: $gray-text;
+    }
+    &--mr147 {
+        margin-right: 147px;
+    }
+}

@@ -1,23 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
-	/*
-		1. по клику на пункты верхнего меню открывать дропдаун
-		2. по клику (повторному) на эти пункты - закрывать дропдаун
-		3. по клику в любое место сайта, кроме меню - закрывать дропдаун
-	*/
 
-	const menuBtns = document.querySelectorAll('.filter__btn');
-	const drops = document.querySelectorAll('.dropdown');
+	const menuBtn1 = document.querySelectorAll('.filter__btn.fil1');
+	const menuBtn2 = document.querySelectorAll('.filter__btn.fil2');
+	const drops = document.querySelectorAll('.dropdown.fil1');
 
-	menuBtns.forEach(el => {
+	menuBtn1.forEach(el => {
 		el.addEventListener('click', (e) => {
 			let currentBtn = e.currentTarget;
-			let drop = currentBtn.closest('.filter__item').querySelector('.dropdown');
+			let drop = currentBtn.closest('.scroll-menu').querySelector('.dropdown.fil2');
 
-			menuBtns.forEach(el => {
+			menuBtn1.forEach(el => {
 				if (el !== currentBtn) {
 					el.classList.remove('filter__btn--active');
 				}
 			});
+	
+	
 
 			drops.forEach(el => {
 				if (el !== drop) {
@@ -29,10 +27,36 @@ document.addEventListener('DOMContentLoaded', () => {
 			currentBtn.classList.toggle('filter__btn--active');
 		});
 	});
+	
+	menuBtn2.forEach(el => {
+		el.addEventListener('click', (e) => {
+			let currentBtn = e.currentTarget;
+			let drop = currentBtn.closest('.scroll-menu').querySelector('.dropdown.fil1');
+
+			menuBtn2.forEach(el => {
+				if (el !== currentBtn) {
+					el.classList.remove('filter__btn--active');
+				}
+			});
+	
+	
+
+			drops.forEach(el => {
+				if (el !== drop) {
+					el.classList.remove('dropdown--active');
+				}
+			});
+
+			drop.classList.toggle('dropdown--active');
+			currentBtn.classList.toggle('filter__btn--active');
+		});
+	});
+
 });
 
+
 function filterItems() {
-    const checkbox = document.getElementById('filming-tg');
+    const checkbox = document.getElementById('filming');
     const items = document.getElementsByClassName('portfolio__grid');
 
     for (let item of items) {

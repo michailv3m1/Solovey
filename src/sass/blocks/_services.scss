@@ -1,0 +1,22 @@
+.services {
+    padding: 160px 123px 177px 35px;
+    display: flex;
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 104px;
+    }
+    &__item {
+        display: flex;
+        flex-direction: column;
+    }
+    &__link {
+        text-decoration: none;
+        font-weight: 400;
+        font-size: 20px;
+        color: $gray-text;
+        &:hover {
+            color: #fff;
+        }
+    }
+}

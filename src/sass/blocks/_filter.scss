@@ -1,7 +1,42 @@
+.scroll-menu {
+    margin-top: 137px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+}
 .filter {
-    &__menu {
-        list-style-type: none;
-        
+    display: flex;
+    justify-content: space-between;
+    min-height: 30px;
+    &__wrapper {
+        display: flex;
+        column-gap: 31px;
+    }
+    &__sort {
+        display: flex;
+    }
+    &__sort-btn {
+        background-color: #000;
+        border: none;
+        display: flex;
+        justify-content: center;
+        font-weight: 400;
+        font-size: 16px;
+        color: $gray-text;
+        text-align: center;
+        &--mr50 {
+            margin-right: 50px;
+        }
+    }
+    &__reset {
+        background-color: #000;
+        border: none;
+        display: flex;
+        justify-content: center;
+        font-weight: 400;
+        font-size: 16px;
+        color: #fff;
+        text-align: center;
     }
     &__btn {
         display: flex;
@@ -22,52 +57,4 @@
         color: #fff;
         text-align: center;
     }
-}
-.dropdown {
-    margin-top: 30px;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-    &--active {
-        opacity: 1;
-        visibility: visible;
-    }
-    &__list {
-        list-style-type: none;
-    }
-    &__lable {
-        position: relative;
-    }
-    &__item {
-        display: flex;
-        align-items: center;
-        column-gap: 14px;
-    }
-    &__checkbox {
-        position: absolute;
-        top: 50%;
-        left:50%;
-        transform: translate(-50%, -50%);
-        width: auto;
-        height: auto;
-        display: block;
-        opacity: 0;
-        z-index: 2;
-        // appearance: none;
-    }
-    &__inner {
-        display: block;
-        position: relative;
-        font-weight: 500;
-        font-size: 16px;
-        color: $gray-text;
-        border-radius:46px;
-        border: 2px solid #313131;
-        padding: 17px 36px 16px 36px;       
-    }
-}
-
-.dropdown__checkbox:checked + .dropdown__inner {
-    background-color: $gray-text;
-    color: #fff;
 }
