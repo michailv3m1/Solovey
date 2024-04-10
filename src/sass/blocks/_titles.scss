@@ -8,4 +8,13 @@
     &--mr147 {
         margin-right: 147px;
     }
+    &--mini {
+        font-weight: 400;
+        font-size: 18px;
+        color: $gray-text;
+    }
+    &--middle {
+        font-size: 50px;
+        text-decoration: none;
+    }
 }

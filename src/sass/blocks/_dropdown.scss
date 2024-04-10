@@ -27,41 +27,12 @@
         row-gap: 10px;
         list-style-type: none;
     }
-    &__lable {
-        position: relative;
-    }
     &__item {
         display: flex;
-    }
-    &__checkbox {
-        position: absolute;
-        top: 50%;
-        left:50%;
-        transform: translate(-50%, -50%);
-        width: auto;
-        height: auto;
-        display: block;
-        opacity: 0;
-        z-index: 2;
-        // appearance: none;
-    }
-    &__inner {
-        display: block;
-        position: relative;
-        font-weight: 500;
-        font-size: 16px;
-        color: $gray-text;
-        border-radius:46px;
-        border: 2px solid #313131;
-        padding: 17px 36px 16px 36px;       
     }
 }
 .list-reset {
     margin: 0;
     padding: 0;
     list-style: none;
-}
-.dropdown__checkbox:checked + .dropdown__inner {
-    background-color: $gray-text;
-    color: #fff;
 }

@@ -12,4 +12,24 @@
         font-weight: 400;
         color: #fff;
     }
+    &__wrapper {
+        margin-top: 233px;
+        display: flex;
+
+    }
+    &__main {
+        display: flex;
+        flex-direction: column;
+        row-gap: 48px;
+    }
+    &__text {
+        font-weight: 400;
+        font-size: 18px;
+        color: #fff;
+    }
+    &__title {
+        margin: 0;
+        margin-right: 187px;
+        line-height: 70px;
+    }
 }
