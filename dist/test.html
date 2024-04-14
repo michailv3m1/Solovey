@@ -1,0 +1,27 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Document</title></head><body><nav>// style<style>body { min-height: 200vh; }
+
+  nav {
+    --ease: all 300ms ease;
+    position: fixed;
+    background: pink;
+    height: 72px;
+    width: 100%;
+    opacity: 0.2;
+    transition: var(--ease);
+  }
+
+  nav.fade-in { opacity: 1; }</style>// logic<script>let scrollpos = window.scrollY
+  const header = document.querySelector("nav")
+  const header_height = header.offsetHeight
+
+  const add_class_on_scroll = () => header.classList.add("fade-in")
+  const remove_class_on_scroll = () => header.classList.remove("fade-in")
+
+  window.addEventListener('scroll', function() { 
+    scrollpos = window.scrollY;
+
+    if (scrollpos >= header_height) { add_class_on_scroll() }
+    else { remove_class_on_scroll() }
+
+    console.log(scrollpos)
+  })</script></body></html>

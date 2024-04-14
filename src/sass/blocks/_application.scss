@@ -1,0 +1,32 @@
+.application {
+    min-height: 647px;
+    padding: 80px 40px;
+    background-color: #121212;
+    &__form {
+        margin-top: 60px;
+    }
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px 14px;
+    }
+    &__item {
+        display: flex;
+    }
+    &__info {
+        display: flex;
+        column-gap: 22px;
+        margin-top: 102px;
+        input {
+            width: 28%;
+            background-color: transparent;
+            border: none;
+            border-bottom: 2px solid #656565;
+            outline: none;
+            color: #fff;
+        }
+    }
+}
+
+
+    

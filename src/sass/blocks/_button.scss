@@ -1,4 +1,7 @@
 .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 290px;
     height: 50px;
     border-radius: 64px;
@@ -10,11 +13,33 @@
     &:hover {
         background-color: #000;
         border: 2px solid #313131;
-        color:#fff;
+        a {
+            color:#fff;
+        }
+    }
+    &__link {
+        padding: 13px 30px;
+        text-decoration: none;
+        color: #000;
+        &:hover {
+            color:#fff;
+        }
+    }
+    &__link-scroll {
+        padding: 11px 40px;
+        text-decoration: none;
+        color: #000;
+        &:hover {
+            color:#fff;
+        }
     }
     &--mini {
         width: 204px;
         border-radius: 100px;
+    }
+    &--scroll-mod {
+        width: 225px;
+        height: 45px;
     }
     &--load-more {
         background-color: #000;
@@ -27,7 +52,11 @@
         }
     }
     &--main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
         width: 331px;
-        text-decoration: none;
+        
     }
 }

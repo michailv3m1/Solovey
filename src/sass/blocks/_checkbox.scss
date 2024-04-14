@@ -1,0 +1,28 @@
+.checkbox-lable {
+    position: relative;
+}
+.checkbox {
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: auto;
+    display: block;
+    opacity: 0;
+    z-index: 2;
+    &__inner {
+        display: block;
+        position: relative;
+        font-weight: 500;
+        font-size: 16px;
+        color: $gray-text;
+        border-radius:46px;
+        border: 2px solid #313131;
+        padding: 17px 36px 16px 36px;       
+    }
+}
+.checkbox:checked + .checkbox__inner {
+    background-color: $gray-text;
+    color: #fff;
+}

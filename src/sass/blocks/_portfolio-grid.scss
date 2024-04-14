@@ -3,6 +3,7 @@
     column-count: 4;
     column-gap: 20px;
     padding: 0 40px;
+    z-index: 1;
     &__grid {
         position: relative;
         width: 100%;
@@ -45,5 +46,5 @@
 }
 
 .is-visible {
-    display: block;
+    display: block !important; 
 }

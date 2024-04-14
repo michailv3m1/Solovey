@@ -1,0 +1,76 @@
+.footer {
+    min-height: 577px;
+    padding: 80px 40px 40px 40px;
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__cont {
+        display: flex;
+        flex-direction: column;
+        width: 455px;
+    }
+    &__contacts {
+        margin-top: 35px;
+        display: flex;
+        flex-direction: column;
+    }
+    &__messenger {
+        display: flex;
+        column-gap: 80px;
+    }
+    &__telegramm {
+        font-weight: 700;
+        font-size: 30px;
+        text-decoration: none;
+        background: linear-gradient(90deg, #00a3ff 0%, #0070ff 100%);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    &__whatsapp {
+        font-weight: 700;
+        font-size: 30px;
+        text-decoration: none;
+        background: linear-gradient(90deg, #a3f920 0%, #46ea7e 100%);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    &__address {
+        margin-top: 35px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 40px;
+        font-weight: 400;
+        font-size: 24px;
+        color: #ffffff;
+    }
+    &__descr {
+        width: 298px;
+    }
+    &__social-wrapper {
+        margin-top: 35px;
+        display: flex;
+        column-gap: 15px;
+    }
+    &__link {
+        text-decoration: none;
+    }
+    &__divider {
+        margin: 0 auto;
+        margin-top: 80px;
+        height: 1px;
+        background-color: #313131;
+    }
+    &__menu {
+        margin-top: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__rights {
+        font-weight: 400;
+        font-size: 14px;
+        color: #313131;
+        text-align: center;
+    }
+}

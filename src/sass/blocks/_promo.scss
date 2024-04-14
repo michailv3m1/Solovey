@@ -15,12 +15,19 @@
     &__wrapper {
         margin-top: 233px;
         display: flex;
-
+        &--thanks {
+            justify-content: center;
+            align-items: center;
+        }
     }
     &__main {
         display: flex;
         flex-direction: column;
         row-gap: 48px;
+        &--thanks {
+            justify-content: center;
+            align-items: center;
+        }
     }
     &__text {
         font-weight: 400;
@@ -31,5 +38,19 @@
         margin: 0;
         margin-right: 187px;
         line-height: 70px;
+        &--mr506 {
+            margin-right: 506px;
+        }
+        &--thanks {
+            margin-right: 0;
+        }
+    }
+    &__link {
+        padding: 13px 72px;
+        text-decoration: none;
+        color: #000;
+        &:hover {
+            color:#fff;
+        }
     }
 }

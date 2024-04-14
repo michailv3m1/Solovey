@@ -2,6 +2,7 @@
     color: #fff;
     font-size: 70px;
     font-weight: 500;
+    margin-bottom: 0;
     &--gray {
         color: $gray-text;
     }
@@ -16,5 +17,10 @@
     &--middle {
         font-size: 50px;
         text-decoration: none;
+    }
+    &--case {
+        font-size: 60px;
+        color: #000;
+        width: 85%;
     }
 }
