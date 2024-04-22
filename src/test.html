@@ -1,47 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Фильтр</title>
 </head>
 <body>
-    <nav/>
 
-// style
-<style>
-  body { min-height: 200vh; }
+<input type="checkbox" id="filter1" class="filterCheckbox" /> Фильтр 1
+<input type="checkbox" id="filter2" class="filterCheckbox" /> Фильтр 2
+<input type="checkbox" id="filter3" class="filterCheckbox" /> Фильтр 3
+<input type="checkbox" id="filter4" class="filterCheckbox" /> Фильтр 4
+<input type="checkbox" id="filter5" class="filterCheckbox" /> Фильтр 5
 
-  nav {
-    --ease: all 300ms ease;
-    position: fixed;
-    background: pink;
-    height: 72px;
-    width: 100%;
-    opacity: 0.2;
-    transition: var(--ease);
-  }
+<button id="resetFilters">Сброс</button>
 
-  nav.fade-in { opacity: 1; }
-</style>
+<div id="catalog">
+    <div class="filterable filter1">Блок 1, фильтр 1</div>
+    <div class="filterable filter1">Блок 1, фильтр 1</div>
+    <div class="filterable filter1">Блок 1, фильтр 1</div>
+    <div class="filterable filter1">Блок 1, фильтр 1</div>
+    <div class="filterable filter2">Блок 2, фильтр 2</div>
+    <div class="filterable filter3">Блок 3, фильтр 3</div>
+    <div class="filterable filter4">Блок 4, фильтр 4</div>
+    <div class="filterable filter5">Блок 5, фильтр 5</div>
+    <div class="filterable filter1 filter2">Блок 6, фильтр 1, фильтр 2</div>
+    <div class="filterable filter2 filter3">Блок 7, фильтр 2, фильтр 3</div>
+    <div class="filterable filter4 filter5">Блок 8, фильтр 4, фильтр 5</div>
+    <button id="loadMore">Показать еще</button>
+</div>
 
-// logic
+
 <script>
-  let scrollpos = window.scrollY
-  const header = document.querySelector("nav")
-  const header_height = header.offsetHeight
+    const checkboxes = document.querySelectorAll('.filterCheckbox');
+    const filters = document.querySelectorAll('.filterable');
+    const resetButton = document.getElementById('resetFilters');
 
-  const add_class_on_scroll = () => header.classList.add("fade-in")
-  const remove_class_on_scroll = () => header.classList.remove("fade-in")
+    resetButton.addEventListener('click', function() {
+        checkboxes.forEach(checkbox => {
+            checkbox.checked = false;
+        });
 
-  window.addEventListener('scroll', function() { 
-    scrollpos = window.scrollY;
+        filters.forEach(filter => {
+            filter.style.display = 'block';
+        });
+    });
 
-    if (scrollpos >= header_height) { add_class_on_scroll() }
-    else { remove_class_on_scroll() }
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+            filters.forEach(filter => {
+                let isVisible = false;
+                checkboxes.forEach(cb => {
+                    if (cb.checked && filter.classList.contains(cb.getAttribute('id'))) {
+                        isVisible = true;
+                    }
+                });
+                if (!isVisible && document.querySelectorAll('.filterCheckbox:checked').length === 0) {
+                    filter.style.display = 'block';
+                } else {
+                    filter.style.display = isVisible ? 'block' : 'none';
+                }
+            });
+        });
+    });
 
-    console.log(scrollpos)
-  })
+    let catalog = document.getElementById('catalog');
+    let loadMoreBtn = document.getElementById('loadMore');
+    let blocksLoaded = 10;
+    let blocksPerLoad = 10;
+    let totalBlocks = 50;
+
+    loadMoreBtn.addEventListener('click', function() {
+        for (let i = blocksLoaded; i < Math.min(blocksLoaded + blocksPerLoad, totalBlocks); i++) {
+            let newBlock = document.createElement('div');
+            newBlock.textContent = 'Блок товара ' + (i + 1);
+            catalog.appendChild(newBlock);
+        }
+
+        blocksLoaded += blocksPerLoad;
+
+        if (blocksLoaded >= totalBlocks) {
+            loadMoreBtn.style.display = 'none'; // Скрыть кнопку, если все блоки загружены
+        }
+    });
 </script>
+
 </body>
 </html>

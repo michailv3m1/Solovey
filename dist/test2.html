@@ -1,0 +1,31 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><title>Фильтр</title></head><body><input type="checkbox" id="filter1" class="filterCheckbox"> Фильтр 1 <input type="checkbox" id="filter2" class="filterCheckbox"> Фильтр 2 <button id="resetFilters">Сброс</button><div class="filterable filter1">Блок 1, фильтр 1</div><div class="filterable filter2">Блок 2, фильтр 2</div><div class="filterable filter1 filter2">Блок 3, фильтр 1, фильтр 2</div><script>const checkboxes = document.querySelectorAll('.filterCheckbox');
+    const filters = document.querySelectorAll('.filterable');
+    const resetButton = document.getElementById('resetFilters');
+
+    resetButton.addEventListener('click', function() {
+        checkboxes.forEach(checkbox => {
+            checkbox.checked = false;
+        });
+
+        filters.forEach(filter => {
+            filter.style.display = 'block';
+        });
+    });
+
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+            filters.forEach(filter => {
+                let isVisible = false;
+                checkboxes.forEach(cb => {
+                    if (cb.checked && filter.classList.contains(cb.getAttribute('id'))) {
+                        isVisible = true;
+                    }
+                });
+                if (isVisible) {
+                    filter.style.display = 'block';
+                } else {
+                    filter.style.display = 'none';
+                }
+            });
+        });
+    });</script></body></html>

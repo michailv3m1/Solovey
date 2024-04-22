@@ -55,28 +55,34 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-function filterItems() {
-    const checkbox = document.getElementById('filming');
-    const items = document.getElementsByClassName('portfolio__grid');
+const checkboxes = document.querySelectorAll('.checkbox');
+const filters = document.querySelectorAll('.portfolio__grid');
+const resetButton = document.getElementById('filter__reset');
 
-    for (let item of items) {
-        if (checkbox.checked && !item.classList.contains('filming')) {
-            item.style.display = 'none';
-        } else {
-            item.style.display = 'block';
-        }
-    }
-}
+resetButton.addEventListener('click', function() {
+	checkboxes.forEach(checkbox => {
+		checkbox.checked = false;
+	});
 
-function resetFilter() {
-    const checkbox = document.getElementById('filming');
-	
-    const items = document.getElementsByClassName('portfolio__grid');
+	filters.forEach(filter => {
+		filter.style.display = 'block';
+	});
+});
 
-    checkbox.checked = false;
-
-    for (let item of items) {
-        item.style.display = 'block';
-    }
-}
-
+checkboxes.forEach(checkbox => {
+	checkbox.addEventListener('change', function() {
+		filters.forEach(filter => {
+			let isVisible = false;
+			checkboxes.forEach(cb => {
+				if (cb.checked && filter.classList.contains(cb.getAttribute('id'))) {
+					isVisible = true;
+				}
+			});
+			if (!isVisible && document.querySelectorAll('.checkbox:checked').length === 0) {
+				filter.style.display = 'block';
+			} else {
+				filter.style.display = isVisible ? 'block' : 'none';
+			}
+		});
+	});
+});
